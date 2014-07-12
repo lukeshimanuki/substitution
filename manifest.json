@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "substitution",
+	"version": "0.1",
+	"description": "Replaces words according to a list of rules",
+	"browser_action":
+	{
+		"default_icon": "icon.png"
+	},
+	"options_page": "options.html",
+	"permissions":
+	[
+		"storage"
+	],
+	"content_scripts":
+	[
+		{
+			"matches": ["*://*/*"],
+			"js": ["substitution.js"],
+			"run_at": "document_end"
+		}
+	]
+}
